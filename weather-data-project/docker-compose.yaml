@@ -21,10 +21,12 @@ services:
       - 8000:8080
     environment:
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@db:5432/airflow_db
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS: "True"
       PYTHONPATH: /opt/airflow/api-request
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/api-request:/opt/airflow/api-request
+      - ./var/run/docker.sock:/var/run/docker.sock
     depends_on:
       - db
     networks:

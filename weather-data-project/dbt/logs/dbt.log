@@ -69,3 +69,19 @@ https://docs.getdbt.com/docs/configure-your-profile
 [0m02:10:39.394773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc6d5424170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc6d524b9e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc6d5dfcec0>]}
 [0m02:10:39.395098 [debug] [MainThread]: Flushing usage events
 [0m02:10:40.032358 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:31:26.221051 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f86ec4b260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f86ef2e840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f870ec8e60>]}
+
+
+============================== 23:31:26.223635 | b61f99e4-bb7b-4995-a3e2-db00a4625ac9 ==============================
+[0m23:31:26.223635 [info ] [MainThread]: Running with dbt=1.11.3
+[0m23:31:26.224102 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'quiet': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'no_print': 'None', 'write_json': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'log_path': 'logs', 'version_check': 'True', 'empty': 'False', 'profiles_dir': '/home/masterful-blitz/estudos/airflow-dbt-postgres-project/weather-data-project/dbt', 'use_colors': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False'}
+[0m23:31:26.224489 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/masterful-blitz/estudos/airflow-dbt-postgres-project/weather-data-project/dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:31:26.225149 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.054179423, "process_in_blocks": "544", "process_kernel_time": 0.160865, "process_mem_max_rss": "99488", "process_out_blocks": "8", "process_user_time": 0.921715}
+[0m23:31:26.225470 [debug] [MainThread]: Command `dbt run` failed at 23:31:26.225401 after 0.05 seconds
+[0m23:31:26.225747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f86ea75880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f86ec4b260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75f86f258800>]}
+[0m23:31:26.226025 [debug] [MainThread]: Flushing usage events
+[0m23:31:26.801523 [debug] [MainThread]: An error was encountered while trying to flush usage events

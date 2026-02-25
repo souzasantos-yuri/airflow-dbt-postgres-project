@@ -10,7 +10,7 @@ select
 from {{ ref('stg_weather_data') }}
 group by
     city,
-    date
+    date(weather_time_local)
 order by
     city,
-    date
+    date(weather_time_local)
