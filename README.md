@@ -1,63 +1,39 @@
 # 📊 Airflow + dbt + PostgreSQL Project
 
-This project demonstrates how to build a modern **data pipeline** using:
-
-- **Apache Airflow** — workflow orchestration  
-- **dbt (Data Build Tool)** — data transformation and modeling  
-- **PostgreSQL** — data warehouse / database  
-- **Docker & Docker Compose** — containerized environment  
-
-The goal of this project is to implement an automated **ELT pipeline** that:
-
-1. 📥 Extracts data  
-2. 🗄 Loads data into PostgreSQL  
-3. 🔄 Transforms data using dbt  
-4. ⚙ Orchestrates everything using Airflow  
+Pipeline ELT moderno que extrai e carrega dados no PostgreSQL, transforma com dbt e orquestra tudo via Apache Airflow — ambiente totalmente containerizado com Docker.
 
 ---
 
-## 🚀 Tech Stack
+## 🎯 Objetivo
 
-- Python  
-- Apache Airflow  
-- dbt  
-- PostgreSQL  
-- Docker & Docker Compose  
-- Bash / Shell  
-
----
-        +------------+
-        |   Data     |
-        |  Source    |
-        +------------+
-               ↓
-        +------------+
-        | PostgreSQL |
-        |   (Raw)    |
-        +------------+
-               ↓
-        +------------+
-        |    dbt     |
-        | Transform  |
-        +------------+
-               ↓
-        +------------+
-        | PostgreSQL |
-        |   (Mart)   |
-        +------------+
-               ↑
-        +------------+
-        |  Airflow   |
-        | Orchestrator|
-        +------------+
+Implementar um pipeline ELT automatizado seguindo uma abordagem em camadas (staging → marts), com separação clara entre orquestração (Airflow) e transformação (dbt), aplicando boas práticas de engenharia de dados.
 
 ---
 
-## ✅ Best Practices Applied
+## 🛠️ Tecnologias
 
-- Containerized environment with Docker  
-- Separation of concerns (orchestration vs transformation)  
-- Layered modeling approach (staging → marts)  
-- Environment-based configuration  
-- Version control with Git  
-- Data quality testing with dbt  
+| Tecnologia | Uso |
+|---|---|
+| Python | Linguagem principal |
+| Apache Airflow | Orquestração do pipeline |
+| dbt | Transformação e modelagem dos dados |
+| PostgreSQL | Data warehouse |
+| Docker / Docker Compose | Infraestrutura containerizada |
+
+---
+
+## 🗂️ Estrutura
+
+```
+airflow-dbt-postgres-project/
+└── weather-data-project/
+    ├── dags/               # DAGs do Airflow
+    ├── dbt/
+    │   ├── models/
+    │   │   ├── staging/    # Modelos de staging
+    │   │   └── marts/      # Modelos finais
+    │   └── profiles.yml
+    └── docker-compose.yaml
+```
+
+---
